@@ -33,12 +33,13 @@ We can extend feature on K6(core service) with customize extension that you can 
 1. **Output metrics**:  
    We can seamless integrate output result to 3th party. Read more [here](https://k6.io/docs/get-started/results-output/).  
    For experimental output, We found limitations that you need to build customize package for include function like a plugins or extensions. Read more [here](https://github.com/grafana/xk6-output-prometheus-remote)
-2. **Browser base testing**:
+2. **Browser base testing**:  
     Read more to understanding how can we measurement [here](https://web.dev/vitals/#core-web-vitals)
 
 ## Advanced integrate
 
-1. K6 integrate output result on Grafana dashboard. You can run docker compose to execute script and send result metrics to virtualize on Grafana below. Then, you can open browser and see your test result on `http://localhost:3000`
+1. **K6 integrate output**:  
+   result on Grafana dashboard. You can run docker compose to execute script and send result metrics to virtualize on Grafana below. Then, you can open browser and see your test result on `http://localhost:3000`
 
     ```bash
     cd scenarios/grafana-integrate
