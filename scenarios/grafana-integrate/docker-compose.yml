@@ -6,7 +6,8 @@ networks:
 
 services:
   prometheus:
-    image: prom/prometheus:v2.45.0
+    image: prom/prometheus:v2.46.0
+    platform: linux/amd64
     command:
       - --web.enable-remote-write-receiver
       - --enable-feature=native-histograms
@@ -17,7 +18,8 @@ services:
       - "9090:9090"
 
   grafana:
-    image: grafana/grafana:10.0.1
+    image: grafana/grafana:10.1.2
+    platform: linux/amd64
     networks:
       - k6
     ports:
@@ -30,8 +32,8 @@ services:
       - ./grafana:/etc/grafana/provisioning/
 
   k6:
-    build: .
     container_name: k6-prom
+    image: dukecyber/k6-prom:v0.2.3-alpine3.18
     networks:
       - k6
     ports:
